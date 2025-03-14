@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play Monster Survivors - the ultimate survival RPG game online. Battle mythical creatures, collect powerful gear, and survive endless waves in this action-packed adventure.">
+    <meta name="keywords" content="Monster Survivors, online survival game, RPG adventure, monster battle game">
+    <link rel="canonical" href="https://werty.com/monster-survivors">
+    
+    <!-- Preload main CSS -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="style">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <title>Monster Survivors - Online Survival RPG Game | Werty.com</title>
+    
+    <!-- Custom CSS -->
+    <style>
+        .game-container {
+            aspect-ratio: 16/9;
+            background: rgba(0,0,0,0.03);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.15);
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-padding {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white font-[system-ui] text-gray-900 antialiased">
+    <main class="container max-w-6xl mx-auto px-4 py-8 md:py-12">
+        <!-- Header Section -->
+        <header class="mb-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 mb-4">
+                Monster Survivors
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 mb-6 max-w-2xl mx-auto">
+                Survive endless waves of mythical creatures in this action-packed RPG adventure. Upgrade your hero, collect epic loot, and become the ultimate monster slayer!
+            </p>
+        </header>
+
+        <!-- Game Container -->
+        <div class="game-container w-full mobile-padding">
+            <iframe 
+                src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html" 
+                class="w-full h-full"
+                allow="fullscreen"
+                loading="eager"
+                title="Monster Survivors Game"
+            ></iframe>
+        </div>
+
+        <!-- Game Details -->
+        <section class="mt-8 md:mt-12 space-y-6">
+            <h2 class="text-2xl md:text-3xl font-semibold text-slate-800">About Monster Survivors</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6 text-slate-700">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-medium text-slate-800">Game Features</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Dynamic combat system with skill-based progression</li>
+                        <li>Over 50 unique monsters and 3 epic bosses</li>
+                        <li>Cross-platform cloud saving</li>
+                        <li>Daily challenges and leaderboards</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-xl font-medium text-slate-800">Game Specs</h3>
+                    <dl class="space-y-2">
+                        <dt class="font-medium">Genre:</dt>
+                        <dd>Action RPG / Survival</dd>
+                        <dt class="font-medium">Version:</dt>
+                        <dd>2.1.4 (Latest)</dd>
+                        <dt class="font-medium">File Size:</dt>
+                        <dd>86MB (Web Optimized)</dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Monster Survivors",
+        "url": "https://werty.com/monster-survivors",
+        "playMode": "Browser",
+        "gamePlatform": "WebGL",
+        "genre": "Action RPG",
+        "description": "Survival action RPG game with monster battles and loot collection",
+        "image": "https://werty.com/images/monster-survivors-cover.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "Werty Games"
+        }
+    }
+    </script>
+</body>
+</html>
