@@ -3,296 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monster Survivors - Survive Against Hordes of Monsters | wertsdf.online</title>
-    <meta name="description" content="Play Monster Survivors online - an action-packed survival game where you fight against endless waves of monsters. Upgrade your character and survive as long as possible!">
-    <link rel="canonical" href="https://wertsdf.online/monster-survivors">
+    <title>Play Space Shooter Online - Free Arcade Game | wertsdf.online</title>
+    <meta name="description" content="Play Space Shooter online for free - an exciting space arcade game where you battle alien ships and navigate through cosmic obstacles. No download required!">
+    <link rel="canonical" href="https://wertsdf.online/games/space-shooter">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        apple: {
-                            blue: '#007AFF',
-                            green: '#34C759',
-                            indigo: '#5856D6',
-                            orange: '#FF9500',
-                            pink: '#FF2D55',
-                            purple: '#AF52DE',
-                            red: '#FF3B30',
-                            teal: '#5AC8FA',
-                            yellow: '#FFCC00',
-                            gray: {
-                                100: '#F2F2F7',
-                                200: '#E5E5EA',
-                                300: '#D1D1D6',
-                                400: '#C7C7CC',
-                                500: '#AEAEB2',
-                                600: '#8E8E93',
-                                700: '#636366',
-                                800: '#48484A',
-                                900: '#3A3A3C',
-                                950: '#1C1C1E',
-                            }
+                        primary: '#007AFF', // Apple Blue
+                        secondary: '#FF2D55', // Apple Pink
+                        accent: '#5856D6', // Apple Purple
+                        success: '#34C759', // Apple Green
+                        warning: '#FF9500', // Apple Orange
+                        danger: '#FF3B30', // Apple Red
+                        info: '#5AC8FA', // Apple Light Blue
+                        dark: '#1C1C1E', // Apple Dark Gray
+                        light: '#F2F2F7', // Apple Light Gray
+                        gray: {
+                            100: '#F2F2F7',
+                            200: '#E5E5EA',
+                            300: '#D1D1D6',
+                            400: '#C7C7CC',
+                            500: '#AEAEB2',
+                            600: '#8E8E93',
+                            700: '#636366',
+                            800: '#48484A',
+                            900: '#3A3A3C',
                         }
                     }
                 }
             }
         }
     </script>
-    <style type="text/css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap');
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
         }
-        .game-container {
+        
+        .game-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
             position: relative;
-            width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            overflow: hidden;
         }
-        .game-iframe {
+        
+        .nav-link::after {
+            content: '';
             position: absolute;
-            top: 0;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
             left: 0;
+            background-color: #007AFF;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
             width: 100%;
-            height: 100%;
-            border: none;
+        }
+        
+        .game-iframe {
+            aspect-ratio: 16/9;
+            max-height: 70vh;
+        }
+        
+        @media (max-width: 640px) {
+            .game-iframe {
+                aspect-ratio: 4/3;
+            }
         }
     </style>
 </head>
-<body class="bg-apple-gray-100 dark:bg-apple-gray-950 text-apple-gray-900 dark:text-white">
+<body class="bg-light text-dark">
     <!-- Header -->
-    <header class="bg-apple-blue text-white shadow-lg">
-        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between">
-            <div class="flex items-center mb-4 md:mb-0">
-                <a href="https://wertsdf.online" class="text-2xl font-bold">wertsdf.online</a>
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <a href="https://wertsdf.online" class="text-2xl font-bold">
+                        <span class="text-primary">wertsdf</span><span class="text-secondary">.online</span>
+                    </a>
+                </div>
+                <nav class="flex space-x-6">
+                    <a href="#" class="nav-link text-gray-700 hover:text-primary transition-colors">Home</a>
+                    <a href="#categories" class="nav-link text-gray-700 hover:text-primary transition-colors">Categories</a>
+                    <a href="#top-games" class="nav-link text-gray-700 hover:text-primary transition-colors">Top Games</a>
+                    <a href="#new-releases" class="nav-link text-gray-700 hover:text-primary transition-colors">New Releases</a>
+                </nav>
             </div>
-            <nav class="flex flex-wrap items-center justify-center space-x-4">
-                <a href="#" class="hover:underline">Home</a>
-                <a href="#categories" class="hover:underline">Categories</a>
-                <a href="#top-games" class="hover:underline">Top Games</a>
-                <a href="#new-releases" class="hover:underline">New Releases</a>
-            </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
-        <!-- Game Title and Description -->
-        <section class="mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-apple-blue">Monster Survivors</h1>
-            <p class="text-xl md:text-2xl text-apple-gray-700 dark:text-apple-gray-300 mb-6">Survive against endless waves of monsters in this thrilling action-packed survival game!</p>
-            
-            <!-- Game Container -->
-            <div class="game-container bg-apple-gray-200 rounded-lg shadow-xl mb-8">
-                <iframe src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html" class="game-iframe" allowfullscreen></iframe>
-            </div>
-
-            <!-- Game Details -->
-            <div class="bg-white dark:bg-apple-gray-900 rounded-lg shadow-lg p-6">
-                <h2 class="text-2xl font-bold mb-4 text-apple-purple">Game Details</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <h3 class="text-lg font-semibold mb-2 text-apple-blue">How to Play</h3>
-                        <p class="mb-4">Use WASD or arrow keys to move your character around the map. Your character attacks automatically, so focus on positioning and avoiding enemies. Collect experience orbs to level up and choose new abilities or upgrade existing ones.</p>
-                        
-                        <h3 class="text-lg font-semibold mb-2 text-apple-blue">Features</h3>
-                        <ul class="list-disc pl-5 space-y-1 mb-4">
-                            <li>Endless survival gameplay</li>
-                            <li>Multiple character abilities and upgrades</li>
-                            <li>Various enemy types with different behaviors</li>
-                            <li>Progressive difficulty scaling</li>
-                            <li>Unique power-ups and special items</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-semibold mb-2 text-apple-blue">Game Strategy</h3>
-                        <p class="mb-4">Focus on movement speed and area damage early on. As waves get harder, prioritize defensive abilities. Keep moving to avoid being surrounded, and try to funnel enemies into tight groups to maximize your damage output.</p>
-                        
-                        <h3 class="text-lg font-semibold mb-2 text-apple-blue">About Monster Survivors</h3>
-                        <p>Monster Survivors is inspired by popular roguelite survival games. Your goal is to survive as long as possible against increasingly difficult waves of monsters. The longer you survive, the stronger you become - but enemies will also grow in number and power. Test your skills and see how long you can last!</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Game Categories -->
-        <section id="categories" class="mb-12">
-            <h2 class="text-3xl font-bold mb-6 text-apple-green">Game Categories</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <a href="#" class="bg-white dark:bg-apple-gray-900 rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow">
-                    <div class="text-apple-blue text-4xl mb-2">🎮</div>
-                    <div class="font-semibold">Action</div>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary to-accent text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Play the Best Free Online Games</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto">Discover a collection of exciting games that you can play directly in your browser. No downloads, no installations - just instant fun!</p>
+            <div class="mt-8">
+                <a href="#featured-game" class="bg-white text-primary hover:bg-gray-100 font-semibold py-3 px-8 rounded-full shadow-lg transition-colors">
+                    Play Now
                 </a>
-                <a href="#" class="bg-white dark:bg-apple-gray-900 rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow">
-                    <div class="text-apple-orange text-4xl mb-2">🧩</div>
-                    <div class="font-semibold">Puzzle</div>
-                </a>
-                <a href="#" class="bg-white dark:bg-apple-gray-900 rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow">
-                    <div class="text-apple-green text-4xl mb-2">🏆</div>
-                    <div class="font-semibold">Sports</div>
-                </a>
-                <a href="#" class="bg-white dark:bg-apple-gray-900 rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow">
-                    <div class="text-apple-purple text-4xl mb-2">🧠</div>
-                    <div class="font-semibold">Strategy</div>
-                </a>
-                <a href="#" class="bg-white dark:bg-apple-gray-900 rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow">
-                    <div class="text-apple-pink text-4xl mb-2">🚗</div>
-                    <div class="font-semibold">Racing</div>
-                </a>
-                <a href="#" class="bg-white dark:bg-apple-gray-900 rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow">
-                    <div class="text-apple-indigo text-4xl mb-2">🔫</div>
-                    <div class="font-semibold">Shooter</div>
-                </a>
-                <a href="#" class="bg-white dark:bg-apple-gray-900 rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow">
-                    <div class="text-apple-teal text-4xl mb-2">🌍</div>
-                    <div class="font-semibold">Adventure</div>
-                </a>
-                <a href="#" class="bg-white dark:bg-apple-gray-900 rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow">
-                    <div class="text-apple-red text-4xl mb-2">👾</div>
-                    <div class="font-semibold">Arcade</div>
-                </a>
-            </div>
-        </section>
-
-        <!-- Top Games -->
-        <section id="top-games" class="mb-12">
-            <h2 class="text-3xl font-bold mb-6 text-apple-orange">Top Games</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white dark:bg-apple-gray-900 rounded-lg shadow-md overflow-hidden">
-                    <div class="h-40 bg-apple-gray-300 dark:bg-apple-gray-800 relative">
-                        <div class="absolute inset-0 flex items-center justify-center text-4xl">🏆</div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg mb-1">Monster Survivors</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-400 text-sm mb-2">Survival • Action</p>
-                        <div class="flex items-center">
-                            <div class="flex text-apple-yellow">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                            <span class="ml-2 text-sm text-apple-gray-600 dark:text-apple-gray-400">5.0</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white dark:bg-apple-gray-900 rounded-lg shadow-md overflow-hidden">
-                    <div class="h-40 bg-apple-gray-300 dark:bg-apple-gray-800 relative">
-                        <div class="absolute inset-0 flex items-center justify-center text-4xl">🚀</div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg mb-1">Space Explorer</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-400 text-sm mb-2">Adventure • Sci-Fi</p>
-                        <div class="flex items-center">
-                            <div class="flex text-apple-yellow">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
-                            </div>
-                            <span class="ml-2 text-sm text-apple-gray-600 dark:text-apple-gray-400">4.7</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white dark:bg-apple-gray-900 rounded-lg shadow-md overflow-hidden">
-                    <div class="h-40 bg-apple-gray-300 dark:bg-apple-gray-800 relative">
-                        <div class="absolute inset-0 flex items-center justify-center text-4xl">🧩</div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg mb-1">Mind Puzzler</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-400 text-sm mb-2">Puzzle • Brain Teaser</p>
-                        <div class="flex items-center">
-                            <div class="flex text-apple-yellow">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
-                            </div>
-                            <span class="ml-2 text-sm text-apple-gray-600 dark:text-apple-gray-400">4.5</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- New Releases -->
-        <section id="new-releases">
-            <h2 class="text-3xl font-bold mb-6 text-apple-red">New Releases</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="bg-white dark:bg-apple-gray-900 rounded-lg shadow-md overflow-hidden">
-                    <div class="h-32 bg-apple-gray-300 dark:bg-apple-gray-800 relative">
-                        <div class="absolute inset-0 flex items-center justify-center text-3xl">🧙</div>
-                        <div class="absolute top-0 right-0 bg-apple-red text-white text-xs px-2 py-1">NEW</div>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="font-bold text-sm">Wizard Quest</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-400 text-xs">Fantasy RPG</p>
-                    </div>
-                </div>
-                <div class="bg-white dark:bg-apple-gray-900 rounded-lg shadow-md overflow-hidden">
-                    <div class="h-32 bg-apple-gray-300 dark:bg-apple-gray-800 relative">
-                        <div class="absolute inset-0 flex items-center justify-center text-3xl">🏎️</div>
-                        <div class="absolute top-0 right-0 bg-apple-red text-white text-xs px-2 py-1">NEW</div>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="font-bold text-sm">Speed Racer</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-400 text-xs">Racing • Action</p>
-                    </div>
-                </div>
-                <div class="bg-white dark:bg-apple-gray-900 rounded-lg shadow-md overflow-hidden">
-                    <div class="h-32 bg-apple-gray-300 dark:bg-apple-gray-800 relative">
-                        <div class="absolute inset-0 flex items-center justify-center text-3xl">🏹</div>
-                        <div class="absolute top-0 right-0 bg-apple-red text-white text-xs px-2 py-1">NEW</div>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="font-bold text-sm">Archer Legend</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-400 text-xs">Action • Strategy</p>
-                    </div>
-                </div>
-                <div class="bg-white dark:bg-apple-gray-900 rounded-lg shadow-md overflow-hidden">
-                    <div class="h-32 bg-apple-gray-300 dark:bg-apple-gray-800 relative">
-                        <div class="absolute inset-0 flex items-center justify-center text-3xl">🌊</div>
-                        <div class="absolute top-0 right-0 bg-apple-red text-white text-xs px-2 py-1">NEW</div>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="font-bold text-sm">Ocean Explorer</h3>
-                        <p class="text-apple-gray-600 dark:text-apple-gray-400 text-xs">Adventure • Simulation</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-apple-gray-900 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">wertsdf.online</h3>
-                    <p class="text-apple-gray-400">Your destination for the best online games. Play instantly without downloads.</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-apple-gray-400 hover:text-white">Home</a></li>
-                        <li><a href="#categories" class="text-apple-gray-400 hover:text-white">Categories</a></li>
-                        <li><a href="#top-games" class="text-apple-gray-400 hover:text-white">Top Games</a></li>
-                        <li><a href="#new-releases" class="text-apple-gray-400 hover:text-white">New Releases</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Legal</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-apple-gray-400 hover:text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="text-apple-gray-400 hover:text-white">Terms of Service</a></li>
-                        <li><a href="#" class="text-apple-gray-400 hover:text-white">Cookie Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-apple-gray-800 mt-8 pt-8 text-center text-apple-gray-500">
-                <p>&copy; 2023 wertsdf.online. All rights reserved.</p>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- Dark mode toggle script -->
-    <script>
-        // Check for user preference
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('dark');
-        }
-    </script>
-</body>
-</html>
+    <!-- Featured Game Section -->
+    <section id="featured-game" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Featured Game</h2>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden max-w-5xl mx-auto">
+                <div class="p-6">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-2">Space Shooter: Cosmic Battle Adventure</h1>
+                    <p class="text-lg text-gray-700 mb-6">Navigate through dangerous space territories, battle alien forces, and collect power-ups in this action-packed arcade game.</p>
+                    
+                    <div class="bg-black rounded-lg overflow-hidden mb-8">
+                        <iframe src="https://oliver77.itch.io/space-shooter" class="w-full game-iframe border-0" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="md:col-span-2">
+                            <h2 class="text-2xl font-semibold mb-4">Game Overview</h2>
+                            <p class="text-gray-700 mb-6">Space Shooter is an exciting arcade-style game that puts you in control of a powerful spacecraft. Your mission is to navigate through increasingly difficult levels, destroy enemy ships, avoid obstacles, and collect power-ups to enhance your capabilities.</p>
+                            
+                            <h2 class="text-2xl font-semibold mb-4">How to Play</h2>
+                            <ul class="list-disc pl-5 text-gray-700 mb-6">
+                                <li class="mb-2">Use arrow keys or WASD to navigate your spacecraft</li>
+                                <li class="mb-2">Press Space or left mouse button to fire your primary weapon</li>
+                                <li class="mb-2">Collect power-ups to upgrade your weapons and shields</li>
+                                <li class="mb-2">Avoid enemy fire and obstacles to survive longer</li>
+                                <li>Defeat boss enemies to progress to more challenging levels</li>
+                            </ul>
+                            
+                            <h2 class="text-2xl font-semibold mb-4">Game Features</h2>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="bg-light p-4 rounded-lg">
+                                    <h3 class="font-medium text-primary mb-2">Multiple Levels</h3>
+                                    <p class="text-gray-700">Progress through increasingly challenging environments</p>
+                                </div>
+                                <div class="bg-light p-4 rounded-lg">
+                                    <h3 class="font-medium text-success mb-2">Weapon Upgrades</h3>
+                                    <p class="text-gray-700">Collect power-ups to enhance your firepower</p>
+                                </div>
+                                <div class="bg-light p-4 rounded-lg">
+                                    <h3 class="font-medium text-accent mb-2">Boss Battles</h3>
+                                    <p class="text-gray-700">Face off against powerful enemy commanders</p>
+                                </div>
+                                <div class="bg-light p-4 rounded-lg">
+                                    <h3 class="font-medium text-warning mb-2">Score System</h3>
+                                    <p class="text-gray-700">Compete for high scores and achievements</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-light p-6 rounded-lg">
+                            <h2 class="text-2xl font-semibold mb-4">Game Details</h2>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-700">Genre:</span>
+                                    <span class="font-medium">Arcade, Shooter</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-700">Players:</span>
+                                    <span class="font-medium">Single Player</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-700">Platform:</span>
+                                    <span class="font-medium">Browser</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-700">Controls:</span>
+                                    <span class="font-medium">Keyboard, Mouse</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-700">Release:</span>
+                                    <span class="font-medium">2023</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-gray-700 mr-2">Rating:</span>
+                                    <div class="flex text-warning">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600">Based on 143 player reviews</p>
+                            </div>
+                            
+                            <div class="mt-6">
+                                <button class="w-full bg-primary hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-colors">
+                                    Play Full Screen
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Game Categories</h2>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="#" class="game-card bg-white rounded-lg shadow p-4 text-center">
+                    <div class="bg-primary bg-opacity-10 rounded-full p-3 mx-auto w-16 h-16 flex items-center justify-center mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                        </svg>
+                    </div>
+                    <h3 class="font-medium">Arcade</h3>
+                </a>
+                <a href="#" class="game-card bg-white rounded-lg shadow p-4 text-center">
+                    <div class="bg-danger bg-opacity-10 rounded-full p-3 mx-auto w-16 h-16 flex items-center justify-center mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-danger" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 01-.707-.707m.707.707a5 5 0 01-.707-.707M6.343 6.343a5 5 0 00-.707-.707m.707.707a5 5 0 00-.707-.707M19.07 4.93a9 9 0 00-1.414-1.414M19.07 4.93a9 9 0 00-1.414-1.414" />
+                        </svg>
+                    </div>
+                    <h3 class="font-medium">Action</h3>
+                </a>
+                <a href="#" class="game-card bg-white rounded-lg shadow p-4 text-center">
+                    <div class="bg-success bg-opacity-10 rounded-full p-3 mx-auto w-16 h-16 flex items-center justify-center mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-medium">Puzzle</h3>
+                </a>
+                <a href="#" class="game-card bg-white rounded-lg shadow p-4 text-center">
+                    <div class="bg-accent bg-opacity-10 rounded-full p-3 mx-auto w-16 h-16 flex items-center justify-center mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-medium">Adventure</h3>
+                </a>
+                <a href="#" class="game-card bg-white rounded-lg shadow p-4 text-center">
+                    <div class="bg-warning bg-opacity-10 rounded-full p-3 mx-auto w-16 h-16 flex items-center justify-center mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-warning" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-medium">Strategy</h3>
+                </a>
+                <a href="#" class="game-card bg-white rounded-lg shadow p-4 text-center">
+                    <div class="bg-info bg-opacity-10 rounded-full p-3 mx-auto w-16 h-16 flex items-center justify-center mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-info" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-medium">Sports</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Games Section -->
+    <section id="top-games" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Top Games</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="game-card bg-white rounded-lg shadow overflow-hidden">
+                    <img src="https://via.placeholder.com/300x200?text=Space+Shooter" alt="Space Shooter" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-1">Space Shooter</h3>
+                        <div class="flex text-warning mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">Navigate through space, destroy enemies and collect power-ups</p>
+                        <a href="#featured-game" class="inline-block bg
